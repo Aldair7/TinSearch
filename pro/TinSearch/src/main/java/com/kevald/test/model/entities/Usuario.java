@@ -1,10 +1,19 @@
 package com.kevald.test.model.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import java.io.Serializable;
+import java.sql.Date;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="usuarios")
@@ -23,8 +32,8 @@ public class Usuario implements Serializable{
 	@Column (name="user_last")
 	private String primerApellido;
 	
-	@Temporal (TemporalType.DATE);
-	@DateTimeFormat (pattern="yyyy-MM-dd");
+	@Temporal (TemporalType.DATE)
+	@DateTimeFormat (pattern="yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
 	@Column (name="correo")
@@ -39,7 +48,7 @@ public class Usuario implements Serializable{
 	private String direccion;
 	
 	@Column (name="telefono")
-	private String Telefono;
+	private int Telefono;
 	
 
 }

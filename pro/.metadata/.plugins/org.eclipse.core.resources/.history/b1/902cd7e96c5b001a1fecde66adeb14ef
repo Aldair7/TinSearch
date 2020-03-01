@@ -1,0 +1,30 @@
+package com.kevald.test.model.entities;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id; 
+import javax.persistence.Table;
+
+@Entity
+@Table (name ="USUARIO PRUEBA")
+public class Usuario {
+
+		@Id
+		private Long Id;
+		
+		@Column(length=255, name="primer_nombre")
+		private String primerNombre;
+		
+		private String segundoNombre;
+		
+		private String primerApellido;  
+		
+		private String segundoApellido;
+		
+		private String dui;
+		
+		private Date fechadeNacimiento;
+		
+}

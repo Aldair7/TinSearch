@@ -1,0 +1,19 @@
+package com.kevald.test.model.entities;
+
+import java.sql.Date;
+
+public class Usuario {
+
+		private String primerNombre;
+		
+		private String segundoNombre;
+		
+		private String primerApellido;  
+		
+		private String segundoApellido;
+		
+		private String dui;
+		
+		private Date fechadeNacimiento;
+		
+}

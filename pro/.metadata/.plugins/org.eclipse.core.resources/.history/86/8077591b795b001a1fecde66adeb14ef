@@ -1,0 +1,5 @@
+package com.kevald.test.model.entities;
+
+public class DetalleOrden {
+
+}
