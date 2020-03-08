@@ -9,3 +9,11 @@
 1583676708630	Rename package 'com.kevald.model.dao'
 1583677258928	Rename type 'service'
 1583677273868	Rename package 'com.kevald.tinsearch.model.service'
+1583684378199	Delete element
+1583684394530	Rename package 'com.kevald.tinsearch.model.controllers'
+1583684407439	Rename package 'com.kevald.tinsearch.model.entities'
+1583684419974	Rename package 'com.kevald.tinsearch.model.repositories'
+1583684433293	Rename package 'com.kevald.tinsearch.model.services'
+1583685288551	Rename compilation unit 'CredtiLineController.java'
+1583685365198	Rename compilation unit 'CreditlineRepository.java'
+1583686396820	Rename type 'DetalleOrdenService'

@@ -1,0 +1,11 @@
+package com.kevald.tinsearch.controllers;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/")
+public class CredtiLineController {
+
+	@Autowired
+	
+}

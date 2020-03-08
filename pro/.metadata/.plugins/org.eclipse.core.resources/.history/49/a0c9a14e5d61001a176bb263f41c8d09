@@ -1,0 +1,5 @@
+package com.kevald.tinsearch.controllers;
+
+public class DetalleOrdenService {
+
+}
