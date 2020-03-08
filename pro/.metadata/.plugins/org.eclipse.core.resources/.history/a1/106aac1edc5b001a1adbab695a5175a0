@@ -1,0 +1,17 @@
+logging.level.org.springfamework = info
+spring.jackson.serialization.write-dates-as-timestamps=false
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.jpa.hibernate.show-sql=true
+spring.datasource.url= jdbc:myslq://localhost:3306/tinsearch
+spring.datasource.username= root
+spring.datasource.password= cisco
+
+server.port=80
+spring.datasource.initialization-mode=always
+spring.datasource.continue-on-error=true
+
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.format_sql = true

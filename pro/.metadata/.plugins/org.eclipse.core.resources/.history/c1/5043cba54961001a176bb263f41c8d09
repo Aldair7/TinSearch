@@ -1,0 +1,5 @@
+package com.kevald.tinsearch.model.services;
+
+public class CreditlineRepository {
+
+}
