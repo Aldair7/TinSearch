@@ -21,7 +21,7 @@ public class ProductoController {
 	    return service.listAll();
     } 
 	// RESTful API methods for Retrieval operations
-	    @GetMapping("/products/{id}")
+	    @GetMapping("/productos/{id}")
 	    public ResponseEntity<Producto> get(@PathVariable Integer id) {
 	        try {
 	            Producto productos = service.get(id);
@@ -33,12 +33,12 @@ public class ProductoController {
      
     // RESTful API method for Create operation
      
-	    @PostMapping("/products")
-	    public void add(@RequestBody Producto product) {
-	        service.save(product);
+	    @PostMapping("/productos")
+	    public void add(@RequestBody Producto productos) {
+	        service.save(productos);
 	    }
     // RESTful API method for Update operation
-	    @PutMapping("/products/{id}")
+	    @PutMapping("/productos/{id}")
 	    public ResponseEntity<?> update(@RequestBody Producto productos, 
 	    		@PathVariable Integer id) {
 	        try {
@@ -47,9 +47,9 @@ public class ProductoController {
 	            
 	            return new ResponseEntity<>(HttpStatus.OK);
 	        } catch (NoSuchElementException e) {
-	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	        }      
-	    }
+	            return new ResponseEntity<>(HttpStatus.NOT_FOUND); 
+	        }   
+	   }       
      
     // RESTful API method for Delete operation
 	    @DeleteMapping("/productos/{id}")

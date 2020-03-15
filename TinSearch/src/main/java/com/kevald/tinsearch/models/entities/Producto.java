@@ -1,25 +1,17 @@
 package com.kevald.tinsearch.models.entities;
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table (name="productos")
-public class Producto implements Serializable {
-private static final long serialVersionUID = 1L;
+public class Producto {
 	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	@Column (name="nombre_pro")
 	@NotEmpty
@@ -42,8 +34,89 @@ private static final long serialVersionUID = 1L;
 	
 	@Column (name="stock")
 	private String Stock;
+
 	
-	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn(name = "categoria_id", nullable=false)
-	private Categoria categorias;
+	public Producto() {
+	}
+
+	public Producto(Integer id, @NotEmpty String nombreProducto, String descripcionProducto, int precioUnidad, int tags,
+			String marca, String foto, String stock) {
+		super();
+		this.id = id;
+		this.NombreProducto = nombreProducto;
+		this.DescripcionProducto = descripcionProducto;
+		this.PrecioUnidad = precioUnidad;
+		this.Tags = tags;
+		this.Marca = marca;
+		this.Foto = foto;
+		this.Stock = stock;
+	}
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNombreProducto() {
+		return NombreProducto;
+	}
+
+	public void setNombreProducto(String nombreProducto) {
+		NombreProducto = nombreProducto;
+	}
+
+	public String getDescripcionProducto() {
+		return DescripcionProducto;
+	}
+
+	public void setDescripcionProducto(String descripcionProducto) {
+		DescripcionProducto = descripcionProducto;
+	}
+
+	public int getPrecioUnidad() {
+		return PrecioUnidad;
+	}
+
+	public void setPrecioUnidad(int precioUnidad) {
+		PrecioUnidad = precioUnidad;
+	}
+
+	public int getTags() {
+		return Tags;
+	}
+
+	public void setTags(int tags) {
+		Tags = tags;
+	}
+
+	public String getMarca() {
+		return Marca;
+	}
+
+	public void setMarca(String marca) {
+		Marca = marca;
+	}
+
+	public String getFoto() {
+		return Foto;
+	}
+
+	public void setFoto(String foto) {
+		Foto = foto;
+	}
+
+	public String getStock() {
+		return Stock;
+	}
+
+	public void setStock(String stock) {
+		Stock = stock;
+	}
+	
+	
 }

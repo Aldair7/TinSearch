@@ -19,8 +19,8 @@ public class UsuarioService {
         return repo.findAll();
     }
      
-    public void save(Usuario usuario) {
-        repo.save(usuario);
+    public void save(Usuario usuarios) {
+        repo.save(usuarios);
     }
      
     public Usuario get(Integer id) {

@@ -42,7 +42,7 @@ public class UsuarioController {
 	    public ResponseEntity<?> update(@RequestBody Usuario usuarios, 
 	    		@PathVariable Integer id) {
 	        try {
-	        	Usuario existCategoria = service.get(id);
+	        	Usuario existUsuario = service.get(id);
 	            service.save(usuarios);
 	            
 	            return new ResponseEntity<>(HttpStatus.OK);
