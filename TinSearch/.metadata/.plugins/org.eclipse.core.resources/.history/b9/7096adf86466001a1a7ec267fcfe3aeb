@@ -1,0 +1,29 @@
+package com.kevald.tinsearch.models.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductoService {
+
+	@Autowired
+	private ProductoService repo;
+	
+	public List<Producto> listAll() {
+        return repo.findAll();
+    }
+     
+    public void save(Product product) {
+        repo.save(product);
+    }
+     
+    public Producto get(Integer id) {
+        return repo.findById(id).get();
+    }
+     
+    public void delete(Integer id) {
+        repo.deleteById(id);
+    }
+}
+
+}

@@ -1,0 +1,5 @@
+package com.kevald.tinsearch.models.services;
+
+public class CategoriaService {
+
+}

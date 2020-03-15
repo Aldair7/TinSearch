@@ -1,10 +1,19 @@
-package com.kevald.test.model.entities;
+package com.kevald.tinsearch.models.entities;
 
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="usuarios")
@@ -23,8 +32,8 @@ public class Usuario implements Serializable{
 	@Column (name="user_last")
 	private String primerApellido;
 	
-	@Temporal (TemporalType.DATE);
-	@DateTimeFormat (pattern="yyyy-MM-dd");
+	@Temporal (TemporalType.DATE)
+	@DateTimeFormat (pattern="yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
 	@Column (name="correo")

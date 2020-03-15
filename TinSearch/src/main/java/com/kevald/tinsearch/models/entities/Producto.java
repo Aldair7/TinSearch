@@ -19,7 +19,7 @@ private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int		 id;
+	private int id;
 	
 	@Column (name="nombre_pro")
 	@NotEmpty
@@ -45,5 +45,5 @@ private static final long serialVersionUID = 1L;
 	
 	@ManyToOne (fetch = FetchType.LAZY)
 	@JoinColumn(name = "categoria_id", nullable=false)
-	private Categorias categorias;
+	private Categoria categorias;
 }

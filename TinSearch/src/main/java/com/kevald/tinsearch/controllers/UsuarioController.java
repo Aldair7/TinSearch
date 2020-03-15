@@ -1,0 +1,60 @@
+package com.kevald.tinsearch.controllers;
+
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
+ 
+import org.springframework.web.bind.annotation.*;
+
+import com.kevald.tinsearch.models.entities.Usuario;
+import com.kevald.tinsearch.models.services.UsuarioService;
+
+@RestController
+public class UsuarioController {
+	
+	@Autowired
+    private UsuarioService service;
+	
+	@GetMapping("/usuarios")
+	public List<Usuario> list() {
+	    return service.listAll();
+    } 
+	// RESTful API methods for Retrieval operations
+	    @GetMapping("/usuarios/{id}")
+	    public ResponseEntity<Usuario> get(@PathVariable Integer id) {
+	        try {
+	        	Usuario usuarios = service.get(id);
+	            return new ResponseEntity<Usuario>(usuarios, HttpStatus.OK);
+	        } catch (NoSuchElementException e) {
+	            return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
+	        }      
+	    }
+     
+    // RESTful API method for Create operation
+     
+	    @PostMapping("/usuarios")
+	    public void add(@RequestBody Usuario usuarios) {
+	        service.save(usuarios);
+	    }
+    // RESTful API method for Update operation
+	    @PutMapping("/usuarios/{id}")
+	    public ResponseEntity<?> update(@RequestBody Usuario usuarios, 
+	    		@PathVariable Integer id) {
+	        try {
+	        	Usuario existCategoria = service.get(id);
+	            service.save(usuarios);
+	            
+	            return new ResponseEntity<>(HttpStatus.OK);
+	        } catch (NoSuchElementException e) {
+	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	        }      
+	    }
+     
+    // RESTful API method for Delete operation
+	    @DeleteMapping("/usuarios/{id}")
+	    public void delete(@PathVariable Integer id) {
+	        service.delete(id);
+	    }
+}
+
