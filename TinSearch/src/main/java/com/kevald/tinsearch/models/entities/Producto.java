@@ -14,7 +14,6 @@ public class Producto {
 	private Integer id;
 	
 	@Column (name="nombre_pro")
-	@NotEmpty
 	private String NombreProducto;
 	
 	@Column (name="descri_pro")
@@ -39,7 +38,7 @@ public class Producto {
 	public Producto() {
 	}
 
-	public Producto(Integer id, @NotEmpty String nombreProducto, String descripcionProducto, int precioUnidad, int tags,
+	public Producto(Integer id, String nombreProducto, String descripcionProducto, int precioUnidad, int tags,
 			String marca, String foto, String stock) {
 		super();
 		this.id = id;

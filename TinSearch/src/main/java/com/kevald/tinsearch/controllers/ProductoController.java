@@ -37,19 +37,20 @@ public class ProductoController {
 	    public void add(@RequestBody Producto productos) {
 	        service.save(productos);
 	    }
+	    
     // RESTful API method for Update operation
 	    @PutMapping("/productos/{id}")
-	    public ResponseEntity<?> update(@RequestBody Producto productos, 
+	    public ResponseEntity<Producto> update(@RequestBody Producto productos, 
 	    		@PathVariable Integer id) {
 	        try {
 	            Producto existProducto = service.get(id);
 	            service.save(productos);
 	            
-	            return new ResponseEntity<>(HttpStatus.OK);
+	            return new ResponseEntity<Producto>(existProducto, HttpStatus.OK);
 	        } catch (NoSuchElementException e) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND); 
-	        }   
-	   }       
+	            }   
+	        }       
      
     // RESTful API method for Delete operation
 	    @DeleteMapping("/productos/{id}")
