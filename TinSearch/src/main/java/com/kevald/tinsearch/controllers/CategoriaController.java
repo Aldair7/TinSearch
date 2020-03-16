@@ -39,13 +39,13 @@ public class CategoriaController {
 	    }
     // RESTful API method for Update operation
 	    @PutMapping("/categorias/{id}")
-	    public ResponseEntity<?> update(@RequestBody Categoria categorias, 
+	    public ResponseEntity<Categoria> update(@RequestBody Categoria categorias, 
 	    		@PathVariable Integer id) {
 	        try {
 	            Categoria existCategoria = service.get(id);
 	            service.save(categorias);
 	            
-	            return new ResponseEntity<>(HttpStatus.OK);
+	            return new ResponseEntity<Categoria>(existCategoria, HttpStatus.OK);
 	        } catch (NoSuchElementException e) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        }      

@@ -21,8 +21,6 @@ public class Usuario implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column (name="user_name")
@@ -49,6 +47,94 @@ public class Usuario implements Serializable{
 	
 	@Column (name="telefono")
 	private String Telefono;
-	
 
+	
+	
+	public Usuario() {
+	}
+
+	public Usuario(Long id, @NotEmpty String primerNombre, String primerApellido, Date fechaNacimiento, String correo,
+			@NotEmpty String contraseña, @NotEmpty String direccion, String telefono) {
+		this.id = id;
+		this.primerNombre = primerNombre;
+		this.primerApellido = primerApellido;
+		this.fechaNacimiento = fechaNacimiento;
+		this.correo = correo;
+		this.Contraseña = contraseña;
+		this.direccion = direccion;
+		this.Telefono = telefono;
+	}
+
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPrimerNombre() {
+		return primerNombre;
+	}
+
+	public void setPrimerNombre(String primerNombre) {
+		this.primerNombre = primerNombre;
+	}
+
+	public String getPrimerApellido() {
+		return primerApellido;
+	}
+
+	public void setPrimerApellido(String primerApellido) {
+		this.primerApellido = primerApellido;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getContraseña() {
+		return Contraseña;
+	}
+
+	public void setContraseña(String contraseña) {
+		Contraseña = contraseña;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getTelefono() {
+		return Telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		Telefono = telefono;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
 }

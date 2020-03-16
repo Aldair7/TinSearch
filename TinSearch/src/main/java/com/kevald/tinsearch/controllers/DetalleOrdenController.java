@@ -40,13 +40,13 @@ public class DetalleOrdenController {
 	    }
     // RESTful API method for Update operation
 	    @PutMapping("/DetalleOrdenes/{id}")
-	    public ResponseEntity<?> update(@RequestBody DetalleOrden detalleOrdenes, 
+	    public ResponseEntity<DetalleOrden> update(@RequestBody DetalleOrden detalleOrdenes, 
 	    		@PathVariable Integer id) {
 	        try {
 	        	DetalleOrden existDetalleOrden = service.get(id);
 	            service.save(detalleOrdenes);
 	            
-	            return new ResponseEntity<>(HttpStatus.OK);
+	            return new ResponseEntity<DetalleOrden>(existDetalleOrden, HttpStatus.OK);
 	        } catch (NoSuchElementException e) {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        }      
